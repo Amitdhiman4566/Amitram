@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<fieldset>
+<nav>
+    <ul>
+        <li><a href="contact.html"></a></li>
+        <h1> CONTACT US</h1>
+        <br/>
+        <br/>
+        <p>Contact us: <a href="tel:8708674969">8708674969</a></p>
+        <br/>
+        <br/>
+      <h2>PLEASE GIVE THE FEEDBACK ON MAIL</h2>
+        <p>Send Mail: <a href="mailto:dhimankandela001@gmail.com">dhimankandela001@gmail.com</a></p>
+        <br/>
+        <br/>
+        <p>Comments</p>
+        <textarea name="textarea" id="textarea" cols="30" rows="10">Enter The Text...</textarea>
+        <br/>
+        <br/>
+        <button id="submitButton">Submit</button>
+    </ul>
+</nav>
+</fieldset>
+<script>
+    // Add event listener to the submit button
+    const submitButton = document.getElementById("submitButton");
+    submitButton.addEventListener("click", function() {
+        // Get the value from the textarea
+        const comment = document.getElementById("textarea").value;
+
+        // You can perform any actions with the comment value here
+        console.log("User's Comment:", comment);
+
+        // Clear the textarea after submitting
+        document.getElementById("textarea").value = '';
+    });
+    const sendMailLink = document.getElementById("sendMailLink");
+    sendMailLink.addEventListener("click", function(event) {
+        // Prevent the default link behavior
+        event.preventDefault();
+
+        // Get the email address from the link's href attribute
+        const emailAddress = sendMailLink.getAttribute("href");
+
+        // Open the default email client with a pre-filled email address
+        window.location.href = `mailto:${emailAddress}`;
+    });
+</script>
+</body>
+</html>

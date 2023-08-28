@@ -1,0 +1,90 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+<fieldset id="A">
+
+<nav>
+
+    <ul>
+        <li><a href="Registraion.html"></a></li>
+        <h2> COMPLETE YOUR REGISTRAION ON AMITRAM</h2>
+        <label for="texFiled1">Name:-</label>
+        <input type="text" id="textField1" name="texFiled1">
+        <br/>
+        <br/>
+        <label for="password">Password:-</label>
+        <input type="password" id="password" name="password">
+        <br/>
+        <br/>
+        <label for="confiram">Confiram Password:-</label>
+        <input type="confiram" id="confiram" name="confiram">
+        <br/>
+        <br/>
+        <label for="interest">Interest In:-</label>
+        <select name="Career" id="Career">
+        
+    <option value="default">--Select--</option>
+        <option value="Automation Engineer"> Automation Engineer</option>
+        <option value="Software Engineer">Software Engineer</option>
+        <option value="Cyber Security Expert">Cyber Security Expert</option>
+        <option value="Web Developer">Web Developer</option>
+    </select>
+        <br/>
+        <br/>
+
+
+        <input type="submit" value="Register">
+      
+
+        <script>
+         // script.js
+
+// Get references to the input fields and the submit button
+const nameField = document.getElementById("textField1");
+const passwordField = document.getElementById("password");
+const confirmPasswordField = document.getElementById("confiram");
+const careerField = document.getElementById("Career");
+const registerButton = document.querySelector("input[type='submit']");
+
+// Add a click event listener to the Register button
+registerButton.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the values entered by the user
+    const nameValue = nameField.value;
+    const passwordValue = passwordField.value;
+    const confirmPasswordValue = confirmPasswordField.value;
+    const careerValue = careerField.value;
+
+    // Perform validation (you can add your own validation logic here)
+    if (nameValue.trim() === "" || passwordValue.trim() === "" || confirmPasswordValue.trim() === "" || careerValue === "default") {
+        alert("Please fill in all the fields and select an interest.");
+        return;
+    }
+
+    if (passwordValue !== confirmPasswordValue) {
+        alert("Passwords do not match. Please confirm your password.");
+        return;
+    }
+
+    // Simulate sending data to a server (replace with your actual logic)
+    console.log("Name:", nameValue);
+    console.log("Password:", passwordValue);
+    console.log("Interest:", careerValue);
+
+    // Clear the input fields after successful registration
+    nameField.value = "";
+    passwordField.value = "";
+    confirmPasswordField.value = "";
+    careerField.value = "default";
+});
+
+        </script>
+      </ul>
+</nav>
+</fieldset>  
+
+      
+      
+       
